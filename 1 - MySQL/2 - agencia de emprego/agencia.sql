@@ -119,7 +119,7 @@ ALTER TABLE cursos_candidato ADD CONSTRAINT FK_candidato
     on update cascade;
     
 
-CREATE TABLE _vagas (
+CREATE TABLE vagas (
     id int auto_increment not null PRIMARY KEY,
     descricao text not null,
     salario decimal(5,2),
@@ -129,26 +129,17 @@ CREATE TABLE _vagas (
     fk_empresa_id int not null
 )default charset utf8;
     
-ALTER TABLE _vagas ADD CONSTRAINT FK_vagas_cargo
+ALTER TABLE vagas ADD CONSTRAINT FK_vagas_cargo
     FOREIGN KEY (fk_profissoes_id)
     REFERENCES profissoes (id)
     on update cascade;
  
-ALTER TABLE _vagas ADD CONSTRAINT FK_vagas_candidato
+ALTER TABLE vagas ADD CONSTRAINT FK_vagas_candidato
     FOREIGN KEY (fk_candidato_id)
     REFERENCES candidato (id)
     on update cascade;
  
-ALTER TABLE _vagas ADD CONSTRAINT FK_vagas_emp
+ALTER TABLE vagas ADD CONSTRAINT FK_vagas_emp
     FOREIGN KEY (fk_empresa_id)
     REFERENCES empresa (id)
     on update cascade;
-    
-    
-    
-    
-    
-    
-    
-    
-    
